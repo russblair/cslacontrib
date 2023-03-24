@@ -1,40 +1,40 @@
-﻿namespace CslaContrib.Caliburn.Micro.V2
+﻿namespace CslaContrib.Net.Caliburn.Micro
 {
+  /// <summary>
+  /// Indicates an item which has subject matter.
+  /// </summary>
+  public interface IHaveSubject
+  {
     /// <summary>
-    /// Indicates an item which has subject matter.
+    /// Gets the subject.
     /// </summary>
-    public interface IHaveSubject
-    {
-        /// <summary>
-        /// Gets the subject.
-        /// </summary>
-        /// <value>The subject.</value>
-        object Subject { get; }
-
-        /// <summary>
-        /// Configures the screen with the subject.
-        /// </summary>
-        /// <param name="subject">The subject.</param>
-        /// <returns>Self</returns>
-        IHaveSubject WithSubject(object subject);
-    }
+    /// <value>The subject.</value>
+    object Subject { get; }
 
     /// <summary>
-    /// Indicates an item which has subject matter.
+    /// Configures the screen with the subject.
     /// </summary>
-    public interface IHaveSubject<T> : IHaveSubject
-    {
-        /// <summary>
-        /// Gets the subject.
-        /// </summary>
-        /// <value>The subject.</value>
-        new T Subject { get; }
+    /// <param name="subject">The subject.</param>
+    /// <returns>Self</returns>
+    IHaveSubject WithSubject(object subject);
+  }
 
-        /// <summary>
-        /// Configures the screen with the subject.
-        /// </summary>
-        /// <param name="subject">The subject.</param>
-        /// <returns>Self</returns>
-        IHaveSubject<T> WithSubject(T subject);
-    }
+  /// <summary>
+  /// Indicates an item which has subject matter.
+  /// </summary>
+  public interface IHaveSubject<T> : IHaveSubject
+  {
+    /// <summary>
+    /// Gets the subject.
+    /// </summary>
+    /// <value>The subject.</value>
+    new T Subject { get; }
+
+    /// <summary>
+    /// Configures the screen with the subject.
+    /// </summary>
+    /// <param name="subject">The subject.</param>
+    /// <returns>Self</returns>
+    IHaveSubject<T> WithSubject(T subject);
+  }
 }

@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>CslaContrib.Net.Caliburn.Micro.V4.WPF.N6._0</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <Import Project="..\CslaContrib.Net.Caliburn.Micro.Shared\CslaContrib.Net.Caliburn.Micro.Shared.projitems" Label="Shared" />
+
+  <ItemGroup>
+    <PackageReference Include="Caliburn.Micro" Version="4.0.212" />
+    <PackageReference Include="Csla.Wpf" Version="6.2.2" />
+  </ItemGroup>
+
+</Project>

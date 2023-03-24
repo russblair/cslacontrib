@@ -1,15 +1,15 @@
-﻿namespace CslaContrib.Caliburn.Micro.V2
+﻿namespace CslaContrib.Net.Caliburn.Micro
 {
+  /// <summary>
+  /// Defines a CSLA .NET Model
+  /// object.
+  /// </summary>
+  public interface IHaveModel
+  {
     /// <summary>
-    /// Defines a CSLA .NET Model
-    /// object.
+    /// Gets or sets the Model property
+    /// of the ScreenWithModel object.
     /// </summary>
-    public interface IHaveModel
-    {
-        /// <summary>
-        /// Gets or sets the Model property
-        /// of the ScreenWithModel object.
-        /// </summary>
-        object Model { get; set; }
-    }
+    object Model { get; set; }
+  }
 }
