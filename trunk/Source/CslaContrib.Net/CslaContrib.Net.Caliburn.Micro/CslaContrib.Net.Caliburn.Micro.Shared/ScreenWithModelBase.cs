@@ -43,8 +43,9 @@ namespace CslaContrib.Net.Caliburn.Micro
     /// Create new instance of base class used to create ScreenWithModel objects that
     /// implement their own commands/verbs/actions.
     /// </summary>
-    public ScreenWithModelBase()
+    public ScreenWithModelBase(ApplicationContext applicationContext)
     {
+      ApplicationContext = applicationContext;
 #if WINDOWS_PHONE
       ManageObjectLifetime = false; // ViewModelBase
 #endif
@@ -136,22 +137,9 @@ namespace CslaContrib.Net.Caliburn.Micro
     }
 
     /// <summary>
-    /// Gets the ApplicationContext.
+    /// Gets or sets the ApplicationContext.
     /// </summary>
-    public ApplicationContext? ApplicationContext   // TODO: Improve. Need to guarantee this is provided.
-    {
-      get
-      {
-        if (Model != null)
-        {
-          if (Model is IUseApplicationContext useApplicationContext)
-          {
-            return useApplicationContext.ApplicationContext;
-          }
-        }
-        return null;
-      }
-    }
+    public ApplicationContext? ApplicationContext { get; set; }
 
     /// <summary>
     /// Gets or sets a value indicating whether the
@@ -1379,7 +1367,7 @@ namespace CslaContrib.Net.Caliburn.Micro
     /// </summary>
     /// <param name="cancellationToken">The cancellation token to cancel operation.</param>
     /// <returns>A task that represents the asynchronous operation and holds the value of the close check..</returns>
-    public Task<bool> CanCloseAsync(CancellationToken cancellationToken = default)
+    public virtual Task<bool> CanCloseAsync(CancellationToken cancellationToken = default)
     {
       return Task.FromResult(true);
     }

@@ -1,4 +1,4 @@
-﻿using CslaContrib.Net.Caliburn.Micro;
+﻿using Csla;
 
 namespace CslaContrib.Net.Caliburn.Micro
 {
@@ -10,6 +10,8 @@ namespace CslaContrib.Net.Caliburn.Micro
   /// <typeparam name="T">Type of the Model object.</typeparam>
   public abstract class ScreenWithModel<T> : ScreenWithModelBase<T>
   {
+    public ScreenWithModel(ApplicationContext applicationContext) : base(applicationContext) { }
+
     #region Verbs
 
     /// <summary>
