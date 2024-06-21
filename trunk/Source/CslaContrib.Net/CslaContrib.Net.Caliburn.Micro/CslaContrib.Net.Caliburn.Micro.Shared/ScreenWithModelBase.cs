@@ -753,8 +753,10 @@ namespace CslaContrib.Net.Caliburn.Micro
     /// has completed (whether successful or
     /// not).
     /// </summary>
-    protected virtual void OnRefreshed()
-    { }
+    protected virtual Task OnRefreshed()
+    {
+      return Task.CompletedTask;
+    }
 
 #if !SILVERLIGHT
 
@@ -884,16 +886,20 @@ namespace CslaContrib.Net.Caliburn.Micro
     /// has completed and before Model is updated
     /// (when successful).
     /// </summary>
-    protected virtual void OnSaving(T model)
-    { }
+    protected virtual Task OnSaving(T model)
+    {
+      return Task.CompletedTask;
+    }
 
     /// <summary>
     /// Method called after a save operation
     /// has completed (whether successful or
     /// not).
     /// </summary>
-    protected virtual void OnSaved()
-    { }
+    protected virtual Task OnSaved()
+    {
+      return Task.CompletedTask;
+    }
 
     /// <summary>
     /// Cancels changes made to the model
